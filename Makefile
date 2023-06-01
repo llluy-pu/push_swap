@@ -6,7 +6,7 @@
 #    By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 01:33:16 by llluy-pu          #+#    #+#              #
-#    Updated: 2023/06/01 21:29:32 by llluy-pu         ###   ########.fr        #
+#    Updated: 2023/06/01 21:22:18 by llluy-pu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,102 +14,57 @@
 #                              VARIABLE REFERENCE                              #
 # **************************************************************************** #
 
-NAME= libft.a
+NAME= push_swap
+NAME_BONUS= checker
 
-CFLAGS= -Wall -Wextra -Werror -I $(INCLUDES)
+# CC= gcc
+CFLAGS= -Wall -Wextra -Werror -g -I $(INCLUDES)
 
-AR= ar
-ARARCH= -cr
-ARINDEX= -s
-
+LIBFT_DIR= libft
+LIBFT_LIB= $(LIBFT_DIR)/libft.a
 INCLUDES= include
-OBJ_DIR= obj
-SRC_DIR= src
+OBJ_DIR= obj/
+SRC_DIR= src/
 
 # **************************************************************************** #
 #                                .C & .H FILES                                 #
 # **************************************************************************** #
 
-SRC=	$(SRC_DIR)/ft_atoi.c	\
-		$(SRC_DIR)/ft_atol.c	\
-		$(SRC_DIR)/ft_atoll.c	\
-		$(SRC_DIR)/ft_bzero.c	\
-		$(SRC_DIR)/ft_calloc.c	\
-		$(SRC_DIR)/ft_isalnum.c	\
-		$(SRC_DIR)/ft_isalpha.c	\
-		$(SRC_DIR)/ft_isascii.c	\
-		$(SRC_DIR)/ft_isdigit.c	\
-		$(SRC_DIR)/ft_isprint.c	\
-		$(SRC_DIR)/ft_isspace.c	\
-		$(SRC_DIR)/ft_itoa.c	\
-		$(SRC_DIR)/ft_lstadd_back.c	\
-		$(SRC_DIR)/ft_lstadd_front.c	\
-		$(SRC_DIR)/ft_lstclear.c	\
-		$(SRC_DIR)/ft_lstdelone.c	\
-		$(SRC_DIR)/ft_lstiter.c	\
-		$(SRC_DIR)/ft_lstlast.c	\
-		$(SRC_DIR)/ft_lstmap.c	\
-		$(SRC_DIR)/ft_lstnew.c	\
-		$(SRC_DIR)/ft_lstsize.c	\
-		$(SRC_DIR)/ft_memalloc.c	\
-		$(SRC_DIR)/ft_memccpy.c	\
-		$(SRC_DIR)/ft_memchr.c	\
-		$(SRC_DIR)/ft_memcmp.c	\
-		$(SRC_DIR)/ft_memcpy.c	\
-		$(SRC_DIR)/ft_memdel.c	\
-		$(SRC_DIR)/ft_memmove.c	\
-		$(SRC_DIR)/ft_memrchr.c	\
-		$(SRC_DIR)/ft_memset.c	\
-		$(SRC_DIR)/ft_printf_itoa_nbrlen.c	\
-		$(SRC_DIR)/ft_printf_print_char.c	\
-		$(SRC_DIR)/ft_printf_print_int.c	\
-		$(SRC_DIR)/ft_printf_print_lower_hex.c	\
-		$(SRC_DIR)/ft_printf_print_ptr.c	\
-		$(SRC_DIR)/ft_printf_print_str.c	\
-		$(SRC_DIR)/ft_printf_print_unsigned.c	\
-		$(SRC_DIR)/ft_printf_print_upper_hex.c	\
-		$(SRC_DIR)/ft_printf.c	\
-		$(SRC_DIR)/ft_putchar.c	\
-		$(SRC_DIR)/ft_putchar_fd.c	\
-		$(SRC_DIR)/ft_putendl.c	\
-		$(SRC_DIR)/ft_putendl_fd.c	\
-		$(SRC_DIR)/ft_putnbr.c	\
-		$(SRC_DIR)/ft_putnbr_fd.c	\
-		$(SRC_DIR)/ft_putstr.c	\
-		$(SRC_DIR)/ft_putstr_fd.c	\
-		$(SRC_DIR)/ft_split.c	\
-		$(SRC_DIR)/ft_strcat.c	\
-		$(SRC_DIR)/ft_strchr.c	\
-		$(SRC_DIR)/ft_strclr.c	\
-		$(SRC_DIR)/ft_strcmp.c	\
-		$(SRC_DIR)/ft_strcpy.c	\
-		$(SRC_DIR)/ft_strdel.c	\
-		$(SRC_DIR)/ft_strdup.c	\
-		$(SRC_DIR)/ft_strequ.c	\
-		$(SRC_DIR)/ft_striter.c	\
-		$(SRC_DIR)/ft_striteri.c	\
-		$(SRC_DIR)/ft_strjoin.c	\
-		$(SRC_DIR)/ft_strlcat.c	\
-		$(SRC_DIR)/ft_strlcpy.c	\
-		$(SRC_DIR)/ft_strlen.c	\
-		$(SRC_DIR)/ft_strmap.c	\
-		$(SRC_DIR)/ft_strmapi.c	\
-		$(SRC_DIR)/ft_strncat.c	\
-		$(SRC_DIR)/ft_strncmp.c	\
-		$(SRC_DIR)/ft_strncpy.c	\
-		$(SRC_DIR)/ft_strnequ.c	\
-		$(SRC_DIR)/ft_strnew.c	\
-		$(SRC_DIR)/ft_strnstr.c	\
-		$(SRC_DIR)/ft_strrchr.c	\
-		$(SRC_DIR)/ft_strstr.c	\
-		$(SRC_DIR)/ft_strtrim.c	\
-		$(SRC_DIR)/ft_substr.c	\
-		$(SRC_DIR)/ft_tolower.c	\
-		$(SRC_DIR)/ft_toupper.c	\
-		$(SRC_DIR)/get_next_line.c
+SRC_FILE=	\
+			chose_rr_or_r.c	\
+			main.c	\
+			more_three_number.c	\
+			under_three_number.c
 
+SRC_COMMON_FILE= \
+			chained_list.c	\
+			check_args.c	\
+			check_sort.c	\
+			fill_array.c	\
+			fill_chained_list.c	\
+			get_array.c	\
+			push.c	\
+			reverse_rotate.c	\
+			rotate.c	\
+			swap.c	\
+			utils.c
 
-OBJ=	$(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
+SRC_BONUS_FILE= \
+			checker_main.c
+
+SRC=		$(addprefix $(SRC_DIR), $(SRC_FILE))
+OBJ_FILE= 	$(SRC_FILE:.c=.o)
+OBJ=		$(addprefix $(OBJ_DIR), $(OBJ_FILE))
+
+SRC_COMMON=		$(addprefix $(SRC_DIR), $(SRC_COMMON_FILE))
+OBJ_COMMON_FILE= $(SRC_COMMON_FILE:.c=.o)
+OBJ_COMMON=		$(addprefix $(OBJ_DIR), $(OBJ_COMMON_FILE))
+
+SRC_BONUS=		$(addprefix $(SRC_DIR), $(SRC_BONUS_FILE))
+OBJ_BONUS_FILE= $(SRC_BONUS_FILE:.c=.o)
+OBJ_BONUS=		$(addprefix $(OBJ_DIR), $(OBJ_BONUS_FILE))
+
+#OBJ=	$(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
 
 # **************************************************************************** #
 #                                HEADER CONFIG                                 #
@@ -138,9 +93,9 @@ HEADER =			@echo "${COLOR_CYAN}\
 					\n Project ${NAME} created by: ${CREATOR_NAME} ${CREATOR_EMAIL}	\
 					${COLOR_END}"
 
-HEADER_LIBRARY =	@echo "${COLOR_YELLOW}\
+HEADER_COMPIL =	@echo "${COLOR_YELLOW}\
 					\n/* ************************************************************************** */\
-					\n/*                          CREATING STATIC LIBRARY...                        */\
+					\n/*                                 COMPILING...                               */\
 					\n/* ************************************************************************** */\n\
 					${COLOR_END}"
 
@@ -162,6 +117,17 @@ HEADER_NORM =		@echo "${COLOR_PURPLE}\
 					\n/* ************************************************************************** */\n\
 					${COLOR_END}"
 
+HEADER_ENTERLIB =	@echo "${COLOR_GREEN}\
+					\n/* ************************************************************************** */\
+					\n/*                               ENTERING LIBFT                               */\
+					\n/* ************************************************************************** */\n\
+					${COLOR_END}"
+
+HEADER_EXITLIB =	@echo "${COLOR_GREEN}\
+					\n/* ************************************************************************** */\
+					\n/*                               EXITING LIBFT                                */\
+					\n/* ************************************************************************** */\n\
+					${COLOR_END}"
 
 # **************************************************************************** #
 #                                    RULES                                     #
@@ -169,40 +135,75 @@ HEADER_NORM =		@echo "${COLOR_PURPLE}\
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@$(AR) $(ARARCH) $@ $^
-	@$(AR) $(ARINDEX) $@
+$(NAME): $(LIBFT_LIB) $(OBJ) $(OBJ_COMMON)
+	$(HEADER)
+	$(CC) $(CFLAGS) -o $@ $(OBJ) $(OBJ_COMMON) $(LIBFT_LIB)
+
+malloc_test: $(LIBFT_LIB) $(OBJ) $(OBJ_COMMON)
+	$(CC) $(CFLAGS) -fsanitize=undefined -rdynamic -o $@ $(OBJ) $(OBJ_COMMON) $(LIBFT_LIB) -L. -lmallocator
+
+$(LIBFT_LIB): makelibf ;
+
+bonus: $(NAME_BONUS)
+
+$(NAME_BONUS): $(LIBFT_LIB) $(OBJ_COMMON) $(OBJ_BONUS)
+	$(HEADER)
+	$(CC) $(CFLAGS) -o $@ $(OBJ_COMMON) $(OBJ_BONUS) $(LIBFT_LIB)
+
+makelibf :
+	$(HEADER_ENTERLIB)
+	@make -C $(LIBFT_DIR)
+	$(HEADER_EXITLIB)
 
 $(OBJ): | $(OBJ_DIR)
 
+$(OBJ_BONUS): | $(OBJ_DIR)
+
+$(OBJ_COMMON): | $(OBJ_DIR)
+
 $(OBJ_DIR):
-	@mkdir -p $@
+	mkdir -p $@
 
 $(OBJ): $(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_COMMON): $(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_BONUS): $(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 header:
 	$(HEADER)
 
 cleanobj:
-	@rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS) $(OBJ_COMMON)
 
 cleanobjdir: cleanobj
-	@rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ_DIR)
 
-clean: cleanobjdir
+clean: cleanobjdir cleanlibft
 	
-fclean: clean
-	@rm -f $(NAME)
+cleanlibft:
+	make -C $(LIBFT_DIR) clean
+
+fcleanlibft:
+	make -C $(LIBFT_DIR) fclean
+	rm -f libft.a
+
+fclean: clean fcleanlibft
+	rm -f $(NAME) $(NAME_BONUS)
+
+re: header fclean all
 
 norm: header
 	${HEADER_NORM}
+	@echo "$(COLOR_GREEN)"
+	-python3 -m norminette $(LIBFT_DIR) | awk "!/: OK!/"
 	@echo "$(COLOR_CYAN)"
-	norminette $(SRC_DIR) | awk "!/: OK!/"
+	-python3 -m norminette $(SRC_DIR)
 	@echo "$(COLOR_PURPLE)"
-	norminette $(INCLUDES) | awk "!/: OK!/"
+	-python3 -m norminette $(INCLUDES)
 	@echo "$(COLOR_END)"
 
-re: fclean all
-
-.PHONY: all clean fclean re norm header cleanobj cleanobjdir
+.PHONY: all clean fclean re norm header makelibf cleanobj cleanobjdir fcleanlibft debug

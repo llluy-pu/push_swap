@@ -6,7 +6,7 @@
 #    By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 01:33:16 by llluy-pu          #+#    #+#              #
-#    Updated: 2023/06/02 21:57:31 by llluy-pu         ###   ########.fr        #
+#    Updated: 2023/06/02 22:00:06 by llluy-pu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -200,6 +200,9 @@ re: header fclean all
 
 termclean:
 	clear
+
+git:
+	gitkraken
 
 norm: header
 	${HEADER_NORM}

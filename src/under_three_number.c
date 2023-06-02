@@ -6,7 +6,7 @@
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 09:15:25 by llluy-pu          #+#    #+#             */
-/*   Updated: 2023/06/01 21:59:13 by llluy-pu         ###   ########.fr       */
+/*   Updated: 2023/06/02 20:53:24 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*sort_two(t_list **stack_a)
 {
-	if (is_stacks_sort(*stack_a, NULL))
+	if (is_stack_a_sorted(*stack_a, NULL))
 		return (*stack_a);
 	sa(stack_a, false);
 	return (*stack_a);
@@ -26,7 +26,7 @@ t_list	*sort_three(t_list **stack_a)
 	t_stack	*second;
 	t_stack	*third;
 
-	while (is_stacks_sort(*stack_a, NULL) == false)
+	while (is_stack_a_sorted(*stack_a, NULL) == false)
 	{
 		first = (*stack_a)->content;
 		second = (*stack_a)->next->content;

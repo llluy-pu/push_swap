@@ -6,7 +6,7 @@
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 12:36:01 by llluy-pu          #+#    #+#             */
-/*   Updated: 2023/06/01 21:59:03 by llluy-pu         ###   ########.fr       */
+/*   Updated: 2023/06/02 21:26:53 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	main(int ac, char **av)
 
 	if (ac == 1)
 		return (EXIT_SUCCESS);
-	stack_a = create_chained_list(ac, av);
+	stack_a = create_list(ac, av);
 	stack_b = NULL;
 	if (get_moves(&stack_a, &stack_b) == EXIT_SUCCESS)
 	{

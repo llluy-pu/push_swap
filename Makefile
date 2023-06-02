@@ -6,7 +6,7 @@
 #    By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 01:33:16 by llluy-pu          #+#    #+#              #
-#    Updated: 2023/06/01 21:22:18 by llluy-pu         ###   ########.fr        #
+#    Updated: 2023/06/02 21:57:31 by llluy-pu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,7 +90,7 @@ HEADER =			@echo "${COLOR_CYAN}\
 					\n    +\#+\#+\#+\#+\#+   +\#+               								\
 					\n         \#+\#    \#+\#                   								\
 					\n        \#\#\#   \#\#\#\#\#\#\#.fr        								\
-					\n Project ${NAME} created by: ${CREATOR_NAME} ${CREATOR_EMAIL}	\
+					\n\n Project ${NAME} created by: ${CREATOR_NAME} ${CREATOR_EMAIL}			\
 					${COLOR_END}"
 
 HEADER_COMPIL =	@echo "${COLOR_YELLOW}\
@@ -194,7 +194,12 @@ fcleanlibft:
 fclean: clean fcleanlibft
 	rm -f $(NAME) $(NAME_BONUS)
 
+fullclean: fclean termclean
+
 re: header fclean all
+
+termclean:
+	clear
 
 norm: header
 	${HEADER_NORM}

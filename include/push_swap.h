@@ -6,7 +6,7 @@
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 22:01:15 by llluy-pu          #+#    #+#             */
-/*   Updated: 2023/06/01 22:01:16 by llluy-pu         ###   ########.fr       */
+/*   Updated: 2023/06/02 21:26:53 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef enum e_bool
 	true = 1
 }	t_bool;
 
-t_list		*create_chained_list(int ac, char **av);
+t_list		*create_list(int ac, char **av);
 int			*check_args(int ac, char **av, unsigned int *size);
 void		create_stack_b(t_list **stack_a, t_list **stack_b);
 
@@ -49,7 +49,7 @@ void		get_index(t_list *stack_a);
 t_list		*sort_upto_three(t_list **stack_a);
 void		sort_morethan_three(t_list **stack_a, t_list **stack_b);
 
-t_bool		is_stacks_sort(t_list *stack_a, t_list *stack_b);
+t_bool		is_stack_a_sorted(t_list *stack_a, t_list *stack_b);
 
 void		free_double_ptr_char(char **arr_char);
 void		exit_print(char *str);

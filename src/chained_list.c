@@ -6,38 +6,35 @@
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 17:08:34 by llluy-pu          #+#    #+#             */
-/*   Updated: 2023/06/01 21:59:17 by llluy-pu         ###   ########.fr       */
+/*   Updated: 2023/06/02 21:37:59 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_list	*create_node(int value)
+t_list *create_node(int value)
 {
-	t_stack	*node;
-	t_list	*list;
-
-	list = malloc(sizeof(*list));
-	if (list == NULL)
-		return (NULL);
-	node = malloc(sizeof(*node));
+	t_stack *node = malloc(sizeof(*node));
 	if (node == NULL)
-	{
-		free(list);
-		return (NULL);
-	}
+		return NULL;
 	node->value = value;
 	node->cost_a = -1;
 	node->cost_b = -1;
 	node->index = 0;
 	node->pos = 0;
 	node->target_pos = 0;
+	t_list *list = malloc(sizeof(*list));
+	if (list == NULL)
+	{
+		free(node);
+		return NULL;
+	}
 	list->content = node;
 	list->next = NULL;
-	return (list);
+	return list;
 }
 
-t_list	*create_chained_list(int ac, char **av)
+t_list	*create_list(int ac, char **av)
 {
 	unsigned int	i;
 	t_list			*node;

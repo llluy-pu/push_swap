@@ -6,7 +6,7 @@
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 01:41:28 by llluy-pu          #+#    #+#             */
-/*   Updated: 2023/06/01 21:59:09 by llluy-pu         ###   ########.fr       */
+/*   Updated: 2023/06/02 20:53:24 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ void	sort_morethan_three(t_list **stack_a, t_list **stack_b)
 {
 	create_stack_b(stack_a, stack_b);
 	sort_upto_three(stack_a);
-	while (!is_stacks_sort(*stack_a, *stack_b))
+	while (!is_stack_a_sorted(*stack_a, *stack_b))
 	{
 		get_position_stack(*stack_a, *stack_b);
 		get_target_position_stack(*stack_a, *stack_b);

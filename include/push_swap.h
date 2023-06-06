@@ -5,148 +5,69 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 22:01:15 by llluy-pu          #+#    #+#             */
-/*   Updated: 2023/06/02 21:26:53 by llluy-pu         ###   ########.fr       */
+/*   Created: 2023/06/06 13:54:35 by llluy-pu          #+#    #+#             */
+/*   Updated: 2023/06/06 16:12:59 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef NEW_PUSH_SWAP_H
+# define NEW_PUSH_SWAP_H
 
-# define LEN_INT 10
+# include "../libft/include/libft.h"
 
-# include <stdlib.h>
-# include <limits.h>
+# ifndef T_LST
+#  define T_LST
 
-# include "list_struct.h"
-# include "libft.h"
-
-typedef enum e_bool
+typedef struct s_lst
 {
-	false = 0,
-	true = 1
-}	t_bool;
+	int				content;
+	int				index;
+	struct s_lst	*next;
+	struct s_lst	*prev;
+}				t_lst;
+# endif
+//SIMPLE_SORT_C
+int		is_sorted(t_lst **stack);
+void	simple_sort(t_lst **a_stack, t_lst **b_stack);
 
-t_list		*create_list(int ac, char **av);
-int			*check_args(int ac, char **av, unsigned int *size);
-void		create_stack_b(t_list **stack_a, t_list **stack_b);
+//SIMPLE_SORT_UTLIS_C
+int		is_sorted(t_lst **stack);
+int		is_order(t_lst **stack, int size);
+void	reset_index(t_lst **stack);
+void	rotate_to_min(t_lst **stack, int size);
 
-char		**get_array(int ac, char **av);
-int			*convert_array_to_int(char **array);
-char		**get_array_single_arg(char *av);
-char		**get_array_multiple_args(int ac, char **av);
-//int			get_steps(long int cost_a, long int cost_b);
-void		get_target_position_stack(t_list *stack_a, t_list *stack_b);
-void		get_position_stack(t_list *stack_a, t_list *stack_b);
+//INDEX_C
+void	ps_index(t_lst **stack);
 
-void		sort_morethan_three(t_list **stack_a, t_list **stack_b);
+//RADIX_C
+int		lst_size(t_lst *lst);
+void	radix_sort(t_lst **a_stack, t_lst **b_stack);
 
-void		chose_and_do_rr_or_r(t_list **stack_a, t_list **stack_b, \
-			long int cost_a, long int cost_b);
+//LST_UTILS_C
+void	lst_addfront(t_lst **stack, t_lst *news);
+void	lst_addback(t_lst **stack, t_lst *news);
+t_lst	*lst_new(int content);
+t_lst	*lst_last(t_lst *stack);
 
-void		get_index(t_list *stack_a);
+//SWAP_C
+void	do_sa(t_lst **stack);
+void	do_sb(t_lst **stack);
+void	do_ss(t_lst **a_stack, t_lst **b_stack);
 
-t_list		*sort_upto_three(t_list **stack_a);
-void		sort_morethan_three(t_list **stack_a, t_list **stack_b);
+//PUSH_C
+void	do_pa(t_lst **a_stack, t_lst **b_stack);
+void	do_pb(t_lst **a_stack, t_lst **b_stack);
 
-t_bool		is_stack_a_sorted(t_list *stack_a, t_list *stack_b);
+//ROTATE_C
+void	rotate(t_lst **stack);
+void	do_ra(t_lst **stack);
+void	do_rb(t_lst **stack);
+void	do_rr(t_lst **a_stack, t_lst **b_stack);
 
-void		free_double_ptr_char(char **arr_char);
-void		exit_print(char *str);
-long int	ft_abs(long int nbr);
-void		display_error_message(char **array);
-
-/*
-** @brief Swap the first 2 elements at the top of stack a and b.
-** Do nothing if there is only one or no elements.
-** 
-** @param stack_a 
-** @param stack_b 
-*/
-void		ss(t_list **stack_a, t_list **stack_b, t_bool silent);
-
-/*
-** @brief Swap the first 2 elements at the top of stack a.
-** Do nothing if there is only one or no elements.
-** 
-** @param stack_a 
-*/
-void		sa(t_list **stack_a, t_bool silent);
-
-/*
-** @brief Swap the first 2 elements at the top of stack b.
-** Do nothing if there is only one or no elements.
-** 
-** @param stack_b 
-*/
-void		sb(t_list **stack_b, t_bool silent);
-
-/*
-** @brief Take the first element at the top of b and put it at the top of a.
-** Do nothing if b is empty.
-** 
-** @param stack_a 
-** @param stack_b 
-*/
-void		pa(t_list **stack_a, t_list **stack_b, t_bool silent);
-
-/*
-** @brief Take the first element at the top of a and put it at the top of b.
-** Do nothing if a is empty.
-** 
-** @param stack_a 
-** @param stack_b 
-*/
-void		pb(t_list **stack_a, t_list **stack_b, t_bool silent);
-
-/*
-** @brief Shift up all elements of stack a by 1.
-** The first element becomes the last one.
-** 
-** @param stack_a 
-*/
-void		ra(t_list **stack_a, t_bool silent);
-
-/*
-** @brief Shift up all elements of stack b by 1.
-** The first element becomes the last one.
-** 
-** @param stack_b 
-*/
-void		rb(t_list **stack_b, t_bool silent);
-
-/*
-** @brief Shift up all elements of stack a and b by 1.
-** The first element becomes the last one.
-** 
-** @param stack_a 
-** @param stack_b 
-*/
-void		rr(t_list **stack_a, t_list **stack_b, t_bool silent);
-
-/*
-** @brief Shift down all elements of stack a by 1.
-** The last element becomes the first one.
-** 
-** @param stack_a 
-*/
-void		rra(t_list **stack_a, t_bool silent);
-
-/*
-** @brief Shift down all elements of stack b by 1.
-** The last element becomes the first one.
-** 
-** @param stack_b 
-*/
-void		rrb(t_list **stack_b, t_bool silent);
-
-/*
-** @brief Shift down all elements of stack a and b by 1.
-** The last element becomes the first one.
-** 
-** @param stack_a 
-** @param stack_b 
-*/
-void		rrr(t_list **stack_a, t_list **stack_b, t_bool silent);
+//REVERSE_C
+void	reverse(t_lst **stack);
+void	do_rra(t_lst **stack);
+void	do_rrb(t_lst **stack);
+void	do_rrr(t_lst **a_stack, t_lst **b_stack);
 
 #endif

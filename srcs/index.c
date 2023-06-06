@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 12:08:34 by mrudloff          #+#    #+#             */
-/*   Updated: 2023/06/06 13:21:32 by llluy-pu         ###   ########.fr       */
+/*   Created: 2023/05/30 12:08:34 by llluy-pu          #+#    #+#             */
+/*   Updated: 2023/06/06 16:05:47 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "new_push_swap.h"
+#include "push_swap.h"
 
 static t_lst	*ps_get_min(t_lst **stack)
 {

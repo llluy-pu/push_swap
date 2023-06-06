@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 09:57:03 by mrudloff          #+#    #+#             */
-/*   Updated: 2023/06/06 13:58:34 by llluy-pu         ###   ########.fr       */
+/*   Created: 2023/05/30 09:57:03 by llluy-pu          #+#    #+#             */
+/*   Updated: 2023/06/06 16:06:02 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "new_push_swap.h"
-#include <limits.h>
+#include "push_swap.h"
 
 static int	ps_check_dup(t_lst *stack)
 {
@@ -42,20 +41,6 @@ static void	ps_stackclear(t_lst **stack)
 	*stack = NULL;
 }
 
-// void	free_split(char **split)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (split[i])
-// 	{
-// 		free(split[i]);
-// 		split[i] = NULL;
-// 		i++;
-// 	}
-// 	free(split);
-// }
-
 static int	ps_initstack(int ac, char **av, t_lst **a_stack)
 {
 	int		i;
@@ -82,28 +67,23 @@ static int	ps_initstack(int ac, char **av, t_lst **a_stack)
 	return (1);
 }
 
+void	exit_error(void)
+{
+	ft_putstr_fd("Error\n", STDERR_FILENO);
+	exit(EXIT_FAILURE);
+}
+
 int	main(int ac, char **av)
 {
 	t_lst	*a_stack;
 	t_lst	*b_stack;
 
 	if (ac == 1)
-	{
-		ft_putstr_fd("Error\n", STDERR_FILENO);
-		exit(EXIT_FAILURE);
-	}
+		exit_error();
 	a_stack = NULL;
 	b_stack = NULL;
-	if (ps_initstack(ac, av, &a_stack) == 0)
-	{
-		ft_putstr_fd("Error\n", STDERR_FILENO);
-		exit(EXIT_FAILURE);
-	}
-	else if (ps_check_dup(a_stack) == -1)
-	{
-		ft_putstr_fd("Error\n", STDERR_FILENO);
-		exit(EXIT_FAILURE);
-	}
+	if (ps_initstack(ac, av, &a_stack) == 0 || ps_check_dup(a_stack) == -1)
+		exit_error();
 	else
 	{
 		ps_index(&a_stack);

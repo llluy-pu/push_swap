@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 13:55:54 by mrudloff          #+#    #+#             */
-/*   Updated: 2023/06/06 13:22:38 by llluy-pu         ###   ########.fr       */
+/*   Created: 2023/05/30 13:55:54 by llluy-pu          #+#    #+#             */
+/*   Updated: 2023/06/06 16:07:46 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "new_push_swap.h"
+#include "push_swap.h"
 
 static void	sort_tree(t_lst **stack)
 {

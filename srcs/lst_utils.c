@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 09:57:16 by mrudloff          #+#    #+#             */
-/*   Updated: 2023/06/06 13:22:32 by llluy-pu         ###   ########.fr       */
+/*   Created: 2023/05/30 09:57:16 by llluy-pu          #+#    #+#             */
+/*   Updated: 2023/06/06 16:05:52 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "new_push_swap.h"
+#include "push_swap.h"
 
 void	lst_addfront(t_lst **stack, t_lst *news)
 {

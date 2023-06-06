@@ -6,7 +6,7 @@
 #    By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 01:33:16 by llluy-pu          #+#    #+#              #
-#    Updated: 2023/06/06 13:27:50 by llluy-pu         ###   ########.fr        #
+#    Updated: 2023/06/06 16:18:12 by llluy-pu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,6 @@ LIBFT_DIR= libft
 LIBFT_LIB= $(LIBFT_DIR)/libft.a
 INCLUDES= include
 OBJ_DIR= obj/
-#SRC_DIR= src/
 SRC_DIR= srcs/
 
 # **************************************************************************** #
@@ -42,22 +41,6 @@ SRC_FILE= \
 			simple_sort.c \
 			swap.c \
 			simple_sort_utils.c \
-# SRC_FILE=	\
-# 			chose_rr_or_r.c	\
-# 			main.c	\
-# 			more_three_number.c	\
-# 			under_three_number.c \
-# 			chained_list.c	\
-# 			check_args.c	\
-# 			check_sort.c	\
-# 			fill_array.c	\
-# 			fill_chained_list.c	\
-# 			get_array.c	\
-# 			push.c	\
-# 			reverse_rotate.c	\
-# 			rotate.c	\
-# 			swap.c	\
-# 			utils.c
 
 SRC_BONUS_FILE= \
 			checker_main.c
@@ -200,7 +183,7 @@ fcleanlibft:
 fclean: clean fcleanlibft
 	rm -f $(NAME) $(NAME_BONUS)
 
-fullclean: fclean termclean
+mclean: fclean termclean
 
 re: header fclean all
 
@@ -221,3 +204,9 @@ norm: header
 	@echo "$(COLOR_END)"
 
 .PHONY: all clean fclean re norm header makelibf cleanobj cleanobjdir fcleanlibft debug
+
+# **************************************************************************** #
+#                         		PUSH_SWAP_TESTER                               #
+# **************************************************************************** #
+test: mclean
+	cd push_swap_tester && ./tester.sh .. -co 2 3 1 6

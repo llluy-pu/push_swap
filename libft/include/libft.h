@@ -6,7 +6,7 @@
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 01:59:19 by llluy-pu          #+#    #+#             */
-/*   Updated: 2023/06/06 14:07:09 by llluy-pu         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:08:16 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <limits.h>
 
 # define GNL_BUFFER_SIZE 4096
 

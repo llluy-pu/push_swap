@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 10:19:11 by mrudloff          #+#    #+#             */
-/*   Updated: 2023/06/06 13:22:39 by llluy-pu         ###   ########.fr       */
+/*   Created: 2023/05/30 10:19:11 by llluy-pu          #+#    #+#             */
+/*   Updated: 2023/06/06 16:07:28 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "new_push_swap.h"
+#include "push_swap.h"
 
 void	reverse(t_lst **stack)
 {

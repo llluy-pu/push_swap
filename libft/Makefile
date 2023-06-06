@@ -6,7 +6,7 @@
 #    By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 01:33:16 by llluy-pu          #+#    #+#              #
-#    Updated: 2023/06/01 21:29:32 by llluy-pu         ###   ########.fr        #
+#    Updated: 2023/06/06 14:14:54 by llluy-pu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRC=	$(SRC_DIR)/ft_atoi.c	\
 		$(SRC_DIR)/ft_atoll.c	\
 		$(SRC_DIR)/ft_bzero.c	\
 		$(SRC_DIR)/ft_calloc.c	\
+		$(SRC_DIR)/ft_freesplit.c	\
 		$(SRC_DIR)/ft_isalnum.c	\
 		$(SRC_DIR)/ft_isalpha.c	\
 		$(SRC_DIR)/ft_isascii.c	\

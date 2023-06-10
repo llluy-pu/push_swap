@@ -6,7 +6,7 @@
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 09:57:03 by llluy-pu          #+#    #+#             */
-/*   Updated: 2023/06/06 16:06:02 by llluy-pu         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:47:18 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	main(int ac, char **av)
 		if (is_sorted(&a_stack) != 1)
 		{
 			if (lst_size(a_stack) <= 5)
-				simple_sort(&a_stack, &b_stack);
+				stack_sort(&a_stack, &b_stack);
 			else
 				radix_sort(&a_stack, &b_stack);
 		}
@@ -99,3 +99,55 @@ int	main(int ac, char **av)
 	ps_stackclear(&b_stack);
 	return (0);
 }
+
+/*
+  What main does:
+  - Check if there is any parametres
+  - Create two stacks
+  - Check if the parametres are valid
+  - Check if there is any duplicate in the stack
+  - Add the parametres to the stack
+  - Add the index to the stack
+  - Check if the stack is sorted
+  - If the stack is not sorted:
+	- If the stack size is less than 5:
+	  - Sort the stack
+	- Else:
+	  - Sort the stack with radix sort
+  - Free the stacks
+  - Return 0
+
+  What ps_initstack does:
+  - Create a new stack
+  - Split the parametres into a new array
+  - Check if the parametres are valid
+  - Add the parametres to the stack
+  - Free the array
+  - Return 1 if everything is ok
+  - Return 0 if there is an error
+  
+  What ps_check_dup does:
+  - Check if there is any duplicate in the stack
+  - Return 1 if there is no duplicate
+  - Return -1 if there is a duplicate
+  
+  What ps_index does:
+  - Add the index to the stack
+
+  What is_sorted does:
+  - Check if the stack is sorted
+  - Return 1 if the stack is sorted
+  - Return 0 if the stack is not sorted
+
+  What lst_size does:
+  - Return the size of the stack
+
+  What stack_sort does:
+  - Sort the stack
+
+  What radix_sort does:
+  - Sort the stack with radix sort
+
+  What ps_stackclear does:
+  - Free the stack
+*/

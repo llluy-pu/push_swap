@@ -6,7 +6,7 @@
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 13:54:35 by llluy-pu          #+#    #+#             */
-/*   Updated: 2023/06/06 16:12:59 by llluy-pu         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:46:07 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,15 @@ typedef struct s_lst
 	struct s_lst	*prev;
 }				t_lst;
 # endif
-//SIMPLE_SORT_C
+/*SIMPLE_SORT_C*/
+//checks if the stack is sorted in ascending order.
 int		is_sorted(t_lst **stack);
-void	simple_sort(t_lst **a_stack, t_lst **b_stack);
+//sorts the stack in ascending order.
+void	stack_sort(t_lst **a_stack, t_lst **b_stack);
 
-//SIMPLE_SORT_UTLIS_C
+/*SIMPLE_SORT_UTLIS_C*/
 int		is_sorted(t_lst **stack);
+
 int		is_order(t_lst **stack, int size);
 void	reset_index(t_lst **stack);
 void	rotate_to_min(t_lst **stack, int size);

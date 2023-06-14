@@ -6,7 +6,7 @@
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 13:55:54 by llluy-pu          #+#    #+#             */
-/*   Updated: 2023/06/06 16:46:05 by llluy-pu         ###   ########.fr       */
+/*   Updated: 2023/06/14 16:57:27 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	sort_tree(t_lst **stack)
 {
-	while (is_sorted(stack) != 1)
+	while (sort_check(stack) != 1)
 	{
 		if (((*stack)->index > (*stack)->next->index)
 			&& ((*stack)->index < (*stack)->next->next->index))
@@ -33,7 +33,7 @@ static void	sort_four(t_lst **a_stack, t_lst **b_stack)
 		return ;
 	rotate_to_min(a_stack, 4);
 	do_pb(a_stack, b_stack);
-	reset_index(a_stack);
+	reset_arg_index(a_stack);
 	sort_tree(a_stack);
 	do_pa(a_stack, b_stack);
 }
@@ -53,7 +53,7 @@ void	stack_sort(t_lst **a_stack, t_lst **b_stack)
 			return ;
 		rotate_to_min(a_stack, 5);
 		do_pb(a_stack, b_stack);
-		reset_index(a_stack);
+		reset_arg_index(a_stack);
 		sort_four(a_stack, b_stack);
 		do_pa(a_stack, b_stack);
 	}

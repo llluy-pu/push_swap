@@ -6,13 +6,13 @@
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 15:17:56 by llluy-pu          #+#    #+#             */
-/*   Updated: 2023/06/14 16:20:07 by llluy-pu         ###   ########.fr       */
+/*   Updated: 2023/06/14 16:57:27 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_sorted(t_lst **stack)
+int	sort_check(t_lst **stack)
 {
 	t_lst	*tmp;
 
@@ -36,7 +36,7 @@ int	is_order(t_lst **stack, int size)
 		rotate(stack);
 		i++;
 	}
-	if (is_sorted(stack) == 1)
+	if (sort_check(stack) == 1)
 	{
 		if (i > (size / 2))
 		{
@@ -55,7 +55,7 @@ int	is_order(t_lst **stack, int size)
 	return (0);
 }
 
-void	reset_index(t_lst **stack)
+void	reset_arg_index(t_lst **stack)
 {
 	t_lst	*lst;
 

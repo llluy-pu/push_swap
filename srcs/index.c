@@ -6,7 +6,7 @@
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 12:08:34 by llluy-pu          #+#    #+#             */
-/*   Updated: 2023/06/06 16:05:47 by llluy-pu         ###   ########.fr       */
+/*   Updated: 2023/06/14 16:20:07 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static t_lst	*ps_get_min(t_lst **stack)
 	return (lst_min);
 }
 
-void	ps_index(t_lst **stack)
+void	arg_index(t_lst **stack)
 {
 	t_lst	*lst;
 	int		index;

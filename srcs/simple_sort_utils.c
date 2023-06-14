@@ -6,7 +6,7 @@
 /*   By: llluy-pu <llluy-pu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 15:17:56 by llluy-pu          #+#    #+#             */
-/*   Updated: 2023/06/06 17:13:15 by llluy-pu         ###   ########.fr       */
+/*   Updated: 2023/06/14 16:20:07 by llluy-pu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	reset_index(t_lst **stack)
 		lst->index = -1;
 		lst = lst->next;
 	}
-	ps_index(stack);
+	arg_index(stack);
 }
 
 void	rotate_to_min(t_lst **stack, int size)
